@@ -1,0 +1,219 @@
+struct lista *cria(int n)
+{
+	struct lista *a, *p, *f;
+	
+	a=f=NULL;
+	
+	for(i=0; i<n; i++)
+	{
+		p=(struct lista*)malloc(sizeof(struct lista));
+		p->valor=num;
+		p->prox=NULL;
+		if(f!=NULL)
+		{
+			f->prox=p;
+		}
+		else
+		{
+			a=p;
+		}
+		f=p;
+	}
+		
+	return a;
+}
+
+struct lista *criar(int n)
+{
+	struct lista *a, *p, *f;
+		
+	int i, num;
+		
+	a=NULL;
+		
+	for(i=0; i<n; i++)
+	{
+		printf("\nDigite um número: ");
+		scanf("%d", &num);
+		p=(struct lista *)malloc(sizeof(struct lista));
+		p->valor=num;
+		
+		if(a==NULL)
+		{
+			p->prox=p;
+			a=p;
+		}
+		else
+		{
+			p=a;
+			f->prox=p;
+		}
+		f=p;
+	}
+	
+	return p;
+}
+
+void imprimir(struct lista *a)
+{
+	struct lista *p;
+	
+	p=a->prox;
+	if(p==a)
+	{
+		printf("%d\t", p->valor);
+	}
+	while(p!=a)
+	{
+		printf("%d\t", p->valor);
+		p=p->prox;
+	}
+	printf("%d\t", p->valor);
+}
+
+
+
+
+vooid imprimir(struct lista *a)
+{
+	while(a!=NULL)
+	{
+		printf("%d\t", a->valor);
+		a=a->prox;
+	}
+}
+
+
+struct lista *inserir(struct lista *a)
+{	
+	struct lista *q;
+	
+	q=(struct lista *)malloc(struct lista);
+	
+	q->valor=num;
+	
+	q->prox=a;
+	a->prox=q;
+		
+	return a;
+}
+
+
+struct lista *inserir(struct lista *a, int num)
+{
+	struct lista *q;
+	
+	q=(struct lista*)malloc(struct lista);
+	
+	q->valor=num;
+	
+	q->prox=a;
+	
+	return q;
+}
+
+struct lista *inserir(struct lista *a, int num)
+{
+	struct lista *t, *p, *q;
+	
+	q=(struct lista *)malloc(sizeof(struct lista));
+	
+	q->valor=num;
+	
+	if(a==NULL)
+	{
+		q->prox=NULL;
+		return q;
+	}
+	else
+	{
+		p=a;
+		
+		while(a>valor!=num)
+		{
+			t=a;
+			a=a->prox;
+		}
+		
+		if(a==NULL)
+		{
+			t->prox=q;
+			q->prox=NULL;
+			return p;
+		}
+	}
+	if(a->valor>num)
+	{
+		q->prox=a;
+		if(a!=p)
+		{
+			t->prox=q;
+			return p;
+		}
+		return q;
+	}
+}
+
+struct lista *remover(struct lista *a)
+{
+	struct *t, *p;
+	
+	if(a==NULL)
+	{
+		printf("\nA lista está vazia\n\n");
+		return NULL;
+	}
+	else
+	{
+		p=a;
+		
+		while(p->valor!=num)	
+		{
+			t=p;
+		
+			p=p->prox;
+		}
+		t->prox=p->prox;
+		free(p);
+	
+		return a;
+}
+
+
+struct lista *remover(struct lista *a)
+{
+	struct lista *p,*t;
+	
+	if(a==NULL)
+	{
+		printf("\nA lista está vazia\n\n");
+		
+		return NULL;
+	}
+	else
+	{
+		p=a->prox;
+		
+		while(p->valor!=num)	
+		{
+			t=p;
+			
+			p=p->prox;
+		}
+				
+		if(p!=a)
+		{
+			t->prox=p->prox;
+		}
+		else
+		{		
+			a=a->prox;
+		}
+		
+		free(p);
+		
+		return a;
+}
+
+
+				
